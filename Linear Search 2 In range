@@ -1,0 +1,21 @@
+public class Main{
+    public static void main(String[] args){
+        String name= "Prakhar";
+        char n= 'P';
+        System.out.println(search(name,n,1,6));
+    }
+    
+    static boolean search(String str, char n, int start,int end){
+        if(str.length()==0){
+            return false;
+            
+        }
+        for(int i=start;i<=end;i++){
+            if(n==str.charAt(i)){
+                return true;
+            }
+        }
+        
+        return false;
+    }
+}
