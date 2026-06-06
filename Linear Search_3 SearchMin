@@ -1,0 +1,15 @@
+public class Main{
+    public static void main(String[] args){
+        int numbers[]={1231,235,57,568,84,25,67};
+        System.out.print(searchMin(numbers));
+    }
+    static int searchMin(int[] nums){
+        int n=nums[0];
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]<=n){
+                n=nums[i];
+            }
+        }
+        return n;
+    }
+}
