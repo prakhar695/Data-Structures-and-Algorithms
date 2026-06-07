@@ -1,0 +1,29 @@
+public class Main {
+    public static void main(String[] args) {
+        int[] hello = {11, 34, 47, 678, 699, 888};
+        int tar = 34;
+
+        System.out.println(binarySearch(hello, tar));
+    }
+
+    static int binarySearch(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length - 1;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            if (nums[mid] == target) {
+                return mid;
+            } 
+            else if (nums[mid] > target) {
+                end = mid - 1;
+            } 
+            else {
+                start = mid + 1;
+            }
+        }
+
+        return -1;
+    }
+}
