@@ -1,0 +1,45 @@
+public class Main {
+    public static void main(String[] args) {
+        int[] tag = {12, 14, 45, 67, 78, 89};
+        int[] tags = {98, 87, 67, 65, 54, 43, 32};
+
+        int tar = 78;
+        int tars = 87;
+
+        System.out.println(agnosticBinarySearch(tag, tar));
+        System.out.println(agnosticBinarySearch(tags, tars));
+    }
+
+    static int agnosticBinarySearch(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length - 1;
+
+        if (nums[start] < nums[end]) { 
+            while (start <= end) {
+                int mid = start + (end - start) / 2;
+
+                if (nums[mid] == target) {
+                    return mid;
+                } else if (nums[mid] > target) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+            }
+        } else { 
+            while (start <= end) {
+                int mid = start + (end - start) / 2;
+
+                if (nums[mid] == target) {
+                    return mid;
+                } else if (nums[mid] > target) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+            }
+        }
+
+        return -1;
+    }
+}
